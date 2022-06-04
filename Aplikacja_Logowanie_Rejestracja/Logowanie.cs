@@ -12,6 +12,9 @@ namespace Aplikacja_Logowanie_Rejestracja
 {
     public partial class Logowanie : Form
     {
+        Rejestracja register_window = new Rejestracja();
+        public string login, password;
+
         public Logowanie()
         {
             InitializeComponent();
@@ -19,7 +22,8 @@ namespace Aplikacja_Logowanie_Rejestracja
 
         private void Rejestracja_Click(object sender, EventArgs e)
         {
-                
+            register_window.ShowDialog();
+
         }
     }
 }
