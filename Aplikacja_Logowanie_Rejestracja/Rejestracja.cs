@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Aplikacja_Logowanie_Rejestracja
 {
-    public partial class Form1 : Form
+    public partial class Rejestracja : Form
     {
-        public Form1()
+        public Rejestracja()
         {
             InitializeComponent();
+        }
+
+        private void Rejestruj_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
