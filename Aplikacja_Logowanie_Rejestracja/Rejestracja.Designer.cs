@@ -103,6 +103,7 @@ namespace Aplikacja_Logowanie_Rejestracja
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(100, 20);
             this.EmailBox.TabIndex = 33;
+            this.EmailBox.TextChanged += new System.EventHandler(this.Text_Change5);
             // 
             // label6
             // 
@@ -121,13 +122,18 @@ namespace Aplikacja_Logowanie_Rejestracja
             this.SurnameBox.Name = "SurnameBox";
             this.SurnameBox.Size = new System.Drawing.Size(100, 20);
             this.SurnameBox.TabIndex = 31;
+            this.SurnameBox.TextChanged += new System.EventHandler(this.Text_Change2);
             // 
             // NameBox
             // 
+            this.NameBox.BackColor = System.Drawing.SystemColors.Window;
+            this.NameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.NameBox.Location = new System.Drawing.Point(201, 44);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(100, 20);
             this.NameBox.TabIndex = 30;
+            this.NameBox.TextChanged += new System.EventHandler(this.Text_Change1);
             // 
             // label4
             // 
@@ -168,6 +174,7 @@ namespace Aplikacja_Logowanie_Rejestracja
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(100, 20);
             this.PasswordBox.TabIndex = 26;
+            this.PasswordBox.TextChanged += new System.EventHandler(this.Text_Change4);
             // 
             // LoginBox
             // 
@@ -175,6 +182,7 @@ namespace Aplikacja_Logowanie_Rejestracja
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(100, 20);
             this.LoginBox.TabIndex = 25;
+            this.LoginBox.TextChanged += new System.EventHandler(this.Text_Change3);
             // 
             // label2
             // 
