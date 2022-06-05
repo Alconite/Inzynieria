@@ -75,6 +75,7 @@ namespace Aplikacja_Logowanie_Rejestracja
             this.Zaloguj.Size = new System.Drawing.Size(75, 29);
             this.Zaloguj.TabIndex = 8;
             this.Zaloguj.Text = "Sign in";
+            this.Zaloguj.Click += new System.EventHandler(this.Zaloguj_Click);
             // 
             // label2
             // 

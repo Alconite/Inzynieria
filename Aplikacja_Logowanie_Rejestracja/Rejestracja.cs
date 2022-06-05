@@ -9,19 +9,34 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Microsoft.Win32;
+using Aplikacja_Logowanie_Rejestracja.model;
 
 namespace Aplikacja_Logowanie_Rejestracja
 {
     public partial class Rejestracja : Form
     {
         public string imie, nazwisko, login, haslo, poczta;
+        private DatabaseService DatabaseService;
+        private string Mode;
+        private Logowanie Logowanie;
 
+        public Account DataContext { get; }
 
         public DateTime date;
         public bool kobieta;
         public Rejestracja()
         {
             InitializeComponent();
+        }
+        
+        public Rejestracja(Logowanie logowanie, string mode)
+        {
+            this.Logowanie = logowanie;
+            this.DataContext = this.Logowanie.account;
+            this.Mode = mode;
+            InitializeComponent();
+            this.DatabaseService = new DatabaseService();
         }
 
         private void Rejestruj_Click(object sender, EventArgs e)
@@ -39,6 +54,12 @@ namespace Aplikacja_Logowanie_Rejestracja
                         kobieta = false;
                     else
                         kobieta = true;
+
+
+                    this.DatabaseService.createConnection();
+                    this.Logowanie.addUserToUserList();
+                    this.Logowanie.account.Login = this.DatabaseService.executeProcedureModify<Account>("ModifyDB", "Insert", this.Logowanie.account);
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Imie i Nazwisko musza zawierac tylko litery");
